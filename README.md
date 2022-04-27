@@ -8,3 +8,5 @@ Key areas covered by this library:
  - exploratory data analysis
  - pre-modeling, machine learning
  - reporting
+
+checked
