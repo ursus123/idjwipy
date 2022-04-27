@@ -15,15 +15,17 @@ class open_data:
 		:return: Dataframe
 		:rtype: Dataframe
 		"""
-		file_name, file_extension = os.path.splitext(file_source)
-		if file_extension =='.csv':
-			data = pd.read_csv(file_source)
-			return data
-		elif file_extension =='.xlsx':
-			data = pd.read_excel(file_source)
-			return data
-		else:
-			print('Check Your Source')
-
+		try:
+			file_name, file_extension = os.path.splitext(file_source)
+			if file_extension =='.csv':
+				data = pd.read_csv(file_source)
+				return data
+			elif file_extension =='.xlsx':
+				data = pd.read_excel(file_source)
+				return data
+			else:
+				print('Check Your Source')
+		except FileNotFoundError:
+			print('Check your file directory and try again')
 open_data = open_data('file_soucre.csv')
 
