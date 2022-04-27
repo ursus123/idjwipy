@@ -18,7 +18,7 @@ class open_data:
 		try:
 			file_name, file_extension = os.path.splitext(file_source)
 			if file_extension =='.csv':
-				data = pd.read_csv(file_source)
+				data = pd.read_csv(file_source, sep=';')
 				return data
 			elif file_extension =='.xlsx':
 				data = pd.read_excel(file_source)
