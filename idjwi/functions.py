@@ -9,6 +9,7 @@ class open_data:
 	def csv_excel(self, file_source):
 		"""
 		This function is used to open csv and Excel files
+		ursus
 		:param file_source: is where you put your file path directory
 		:type file_source: str
 
