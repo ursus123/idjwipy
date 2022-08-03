@@ -19,7 +19,7 @@ setup(
 	license='MIT',
 	packages=['idjwi'],
 	include_package_data= True,
-	install_requires=['numpy', 'pandas'],
+	install_requires=['numpy', 'pandas','pandas_datareader','datetime'],
 	classifiers=[
 		"Intended Audience :: Developers",
 		"License :: OSI Approved :: MIT License",
