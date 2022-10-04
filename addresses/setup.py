@@ -18,9 +18,10 @@ setup(
                         'geojson',
                         'lxml',
                         'matplotlib',
-                        'ujson',
+                        'json',
                         'xarray',
-                        'pyspark'
+                        'pyspark',
+                        'request'
                         ],
 
     extra_require ={'test':['pytest','pytest-sugar']},
