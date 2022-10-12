@@ -1,0 +1,28 @@
+CREATE TABLE `enterprises` (
+  `id` uuid NOT NULL,
+  `names_id` uuid NOT NULL,
+  `types_id` uuid NOT NULL,
+  `address_id` VARCHAR (50) NOT NULL,
+  `industry_id` VARCHAR (50) NOT NULL,
+  'finance_id'  VARCHAR (50),
+  `contacts_id` VARCHAR (50) NOT NULL,
+  `start_date` DATE NOT NULL,
+  `end_date` DATE,
+  'about_us' VARCHAR (500),
+  `owner_names_id` uuid,
+  `updated_at` DATE NOT NULL,
+  'updated_by_names_id' uuid NOT NULL,
+  `created_at` DATE NOT NULL,
+  'created_by_names_id' uuid NOT NULL,
+  KEY `PRIMARY KEY` (`id`),
+  KEY `FOREIGN KEY` (`names_id`,
+                     `types_id`,
+                     `address_id`,
+                     `industry_id`,
+                     `contacts_id`,
+                     `owner_names_id`,
+                     'created_by_names_id',
+                     'updated_by_names_id')
+);
+
+

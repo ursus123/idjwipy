@@ -1,5 +1,8 @@
 import requests, json, overpy, overpy.helper, json,pprint, folium, pyspark, os, sys,pandas as pd, pyspark.pandas as ps
 from collections import defaultdict
+from pyspark.sql import SparkSession
+from collections import defaultdict
+
 os.environ['PYSPARK_DRIVER_PYTHON_OPTS']= "notebook"
 os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
 os.environ['PYSPARK_PYTHON'] = sys.executable
@@ -58,12 +61,10 @@ class Addresses:
         return map
 
     def AmenityList():
-        '''This is used to map facilities used by visitors and residents
-        for example toilets, banks,pharmacies,...'''
+        '''This is the list of all Amenities'''
+        spark_addresses = SparkSession.builder.master('local[0]').appName('idjwi').getOrCreate()
         url = "http://wiki.openstreetmap.org/wiki/Key:amenity"
-        df = pd.read_html(io = url)
-        df = dict(df[1])[('Value', 'Sustenance')]
-        AmenityList = list(df)
+        AmenityList = list(spark_addresses.sparkContext.parallelize(pd.read_html(url),10).collect()[1][(             'Value', 'Sustenance')])
         return AmenityList
 
     def BarrierList():

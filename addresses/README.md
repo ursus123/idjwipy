@@ -1,4 +1,4 @@
-# Table: Idjwi.Addresses
+# Table: </br> Idjwi.Addresses
 
 This is how to use the table addresses to map objects of the real world. <br/>
 This table is going to be build on the top of **[OpenStreetMap](/www.openstreetmap.org)**.
