@@ -1,0 +1,9 @@
+CREATE TABLE `properties` (
+  `id` uuid NOT NULL,
+  `name` VARCHAR(50) NOT NULL,
+  `type` uuid NOT NULL,
+  `field_type` uuid NOT NULL,
+  KEY `PRIMARY KEY` (`id`)
+ );
+
+

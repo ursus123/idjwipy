@@ -1,0 +1,26 @@
+
+CREATE TYPE tables AS ENUM ('people', 'enterprises', 'objects', 'locations')
+
+CREATE TABLE `names` (
+  `id` uuid NOT NULL,
+  `first_name` VARCHAR (50)  NOT NULL,
+  `middle_name` VARCHAR (50),
+  `last_name` VARCHAR (50) NOT NULL,
+  `nick_name` VARCHAR (50),
+  `surname` VARCHAR (50),
+  `family_name` VARCHAR (50),
+  `abbreviation` VARCHAR (50),
+  `prefix` VARCHAR (50),
+  `suffix` VARCHAR (50),
+  `signature` VARCHAR (50) NOT NULL,
+  `to_table` tables NOT NULL,
+  `created_at` DATE NOT NULL,
+  `created_by_name_id` uuid NOT NULL,
+  `updated_by_name_id` uuid NOT NULL,
+  `update_at` DATE NOT NULL,
+
+  KEY `PRIMARY KEY` (`id`),
+  KEY `UNIQUE` (`signature`),
+  KEY `FOREIGN KEY` (`created_by_name_id`,
+                     `updated_by_name_id`)
+);

@@ -1,6 +1,8 @@
+CREATE TYPE addressestypes AS ENUM ('Home', 'Work','Business','Billing','Shipping')
+
 CREATE TABLE `addresses` (
   `id` uuid NOT NULL,
-  `address_type` VARCHAR (50) NOT NULL,
+  `address_type` addressestypes NOT NULL,
   `street_number` INTEGER NOT NULL,
   `street_name` VARCHAR (50) NOT NULL,
   `city` VARCHAR (50) NOT NULL,

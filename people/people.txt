@@ -1,7 +1,11 @@
+
+CREATE TYPE maritalstatus AS ENUM ('Married', 'Single', 'Others')
+CREATE TYPE peopletypes AS ENUM ('Customer','Worker', 'Others')
+
 CREATE TABLE `people` (
   `id` uuid NOT NULL,
   `names_id` uuid NOT NULL,
-  `types_id` uuid NOT NULL,
+  `types` peopletypes NOT NULL,
   `contacts_id` uuid NOT NULL,
   `addresses_id` uuid NOT NULL,
   `enterprise_id` uuid NOT,
@@ -14,7 +18,7 @@ CREATE TABLE `people` (
   `hire_date` DATE NOT NULL,
   `education_id` uuid,
   `gender` VARCHAR (50) NOT NULL,
-  `marital_status` VARCHAR (50) NOT NULL,
+  `marital_status` maritalstatus NOT NULL,
   `reference_id ` uuid,
   `salary` INTEGER,
   `company_id` uuid,
