@@ -1,5 +1,6 @@
 
-CREATE TYPE tables AS ENUM ('people', 'enterprises', 'objects', 'locations')
+CREATE TYPE TABLES AS ENUM ('people', 'enterprises', 'objects', 'locations')
+CREATE TYPE
 
 CREATE TABLE `names` (
   `id` uuid NOT NULL,
@@ -13,7 +14,7 @@ CREATE TABLE `names` (
   `prefix` VARCHAR (50),
   `suffix` VARCHAR (50),
   `signature` VARCHAR (50) NOT NULL,
-  `to_table` tables NOT NULL,
+  `from_table` tables NOT NULL,
   `created_at` DATE NOT NULL,
   `created_by_name_id` uuid NOT NULL,
   `updated_by_name_id` uuid NOT NULL,
@@ -24,3 +25,21 @@ CREATE TABLE `names` (
   KEY `FOREIGN KEY` (`created_by_name_id`,
                      `updated_by_name_id`)
 );
+
+
+appliances = { 'refrigerators': ,
+                'washers': ,
+                'dryers': ,
+                'dishwashers': ,
+                'ranges': ,
+                'microwaves': ,
+                'range_hoods': ,
+                'wall_ovens': ,
+                'cooktops': ,
+                'vaccum_cleaners': ,
+                'appliance_parts': ,
+                'small_kitchen_appliances:' ,
+                'househould_appliances': ,
+                'heating_cooling_and_air_quality: ,
+                'water_heaters: ,
+                'garbage_disposals:'

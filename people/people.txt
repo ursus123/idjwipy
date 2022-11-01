@@ -1,6 +1,6 @@
 
 CREATE TYPE maritalstatus AS ENUM ('Married', 'Single', 'Others')
-CREATE TYPE peopletypes AS ENUM ('Customer','Worker', 'Others')
+CREATE TYPE peopletypes AS ENUM ('Customer','Worker', Parent,Student,Child'Others')
 
 CREATE TABLE `people` (
   `id` uuid NOT NULL,
